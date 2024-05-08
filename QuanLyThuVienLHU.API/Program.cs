@@ -1,9 +1,12 @@
 using AutoMapper;
+using infrastructure.repositories;
 using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Infrastructure.Repositories.Interfaces;
+using Infrastructure.ServicesRepositories;
 using Microsoft.EntityFrameworkCore;
 using QuanLyThuVienLHU.API.Helpers;
+using QuanLyThuVienLHU.API.Serivces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +24,12 @@ builder.Services.AddDbContext<QuanLyThuVien_LHUContext>(options =>
 
 builder.Services.AddScoped(typeof(IRepositoryBaseAsync<>), typeof(RepositoryBaseAsync<>))
                 .AddScoped<IUnitOfWork, UnitOfWork>()
-                .AddScoped<INhanVienRepository, NhanVienRepository>();
+                .AddScoped<INhanVienRepository, NhanVienRepository>()
+                .AddScoped<ITaiKhoanRepository, TaiKhoanRepository>()
+                .AddScoped<IChiTietPhieuMuonRepository, ChiTietPhieuMuonRepository>()
+                .AddScoped<IPhieuMuonRepository, PhieuMuonRepository>()
+                .AddScoped<ChiTietPhieuMuonService>();
+;
 
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile(new MappingProfile()));
 var app = builder.Build();

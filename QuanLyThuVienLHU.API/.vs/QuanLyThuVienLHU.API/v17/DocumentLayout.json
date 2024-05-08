@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\dtos\\createnhanviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\entities\\chitietphieumuon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\dtos\\getnhanviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|e:\\learning\\be\\tailieu\\quanlythuvienlhu.api\\helpers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|solutionrelative:helpers\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\controllers\\nhanviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|e:\\learning\\be\\tailieu\\quanlythuvienlhu.api\\controllers\\nhanviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|solutionrelative:controllers\\nhanviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\dtos\\updatenhanviendto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|e:\\learning\\be\\tailieu\\quanlythuvienlhu.api\\controllers\\chitietphieumuoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|solutionrelative:controllers\\chitietphieumuoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\servicesrepositories\\taikhoanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|e:\\learning\\be\\tailieu\\quanlythuvienlhu.api\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|solutionrelative:controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\repositories\\interfaces\\irepositorybaseasync.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C3366B5-707E-42AB-AF5C-2904E8A176A3}|..\\Infrastructure\\Infrastructure.csproj|e:\\learning\\be\\tailieu\\infrastructure\\servicesrepositories\\sachrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|e:\\learning\\be\\tailieu\\quanlythuvienlhu.api\\controllers\\phieumuoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A932B9B4-0154-482E-87A7-44F39D0ADCBC}|QuanLyThuVienLHU.API.csproj|solutionrelative:controllers\\phieumuoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,8 +25,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 216,
-          "SelectedChildIndex": 10,
+          "DockedWidth": 370,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,134 +43,68 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChiTietPhieuMuon.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\Entities\\ChiTietPhieuMuon.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\Entities\\ChiTietPhieuMuon.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\Entities\\ChiTietPhieuMuon.cs",
-              "RelativeToolTip": "..\\Infrastructure\\Entities\\ChiTietPhieuMuon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:32:28.102Z",
-              "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 219,
+          "SelectedChildIndex": 4,
+          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Helpers\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "Helpers\\MappingProfile.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Helpers\\MappingProfile.cs",
-              "RelativeToolTip": "Helpers\\MappingProfile.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAIAAAAeAAAA",
+              "DocumentIndex": 2,
+              "Title": "TaiKhoanController.cs",
+              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\TaiKhoanController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaiKhoanController.cs",
+              "ToolTip": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\TaiKhoanController.cs",
+              "RelativeToolTip": "Controllers\\TaiKhoanController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:26:45.585Z",
+              "WhenOpened": "2024-05-08T16:37:06.036Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NhanVienController.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\NhanVienController.cs",
-              "RelativeDocumentMoniker": "Controllers\\NhanVienController.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\NhanVienController.cs",
-              "RelativeToolTip": "Controllers\\NhanVienController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAAfAAAA",
+              "DocumentIndex": 1,
+              "Title": "ChiTietPhieuMuonController.cs",
+              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\ChiTietPhieuMuonController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChiTietPhieuMuonController.cs",
+              "ToolTip": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\ChiTietPhieuMuonController.cs",
+              "RelativeToolTip": "Controllers\\ChiTietPhieuMuonController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB0AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:26:24.931Z"
+              "WhenOpened": "2024-05-08T16:36:33.944Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UpdateNhanVienDto.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\DTOs\\UpdateNhanVienDto.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\DTOs\\UpdateNhanVienDto.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\DTOs\\UpdateNhanVienDto.cs",
-              "RelativeToolTip": "..\\Infrastructure\\DTOs\\UpdateNhanVienDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAoAAAA",
+              "DocumentIndex": 3,
+              "Title": "PhieuMuonController.cs",
+              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\PhieuMuonController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PhieuMuonController.cs",
+              "ToolTip": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\PhieuMuonController.cs",
+              "RelativeToolTip": "Controllers\\PhieuMuonController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:25:57.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetNhanVienDto.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\DTOs\\GetNhanVienDto.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\DTOs\\GetNhanVienDto.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\DTOs\\GetNhanVienDto.cs",
-              "RelativeToolTip": "..\\Infrastructure\\DTOs\\GetNhanVienDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:25:50.78Z",
+              "WhenOpened": "2024-05-08T16:36:26.947Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateNhanVienDto.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\DTOs\\CreateNhanVienDto.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\DTOs\\CreateNhanVienDto.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\DTOs\\CreateNhanVienDto.cs",
-              "RelativeToolTip": "..\\Infrastructure\\DTOs\\CreateNhanVienDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Title": "NhanVienController.cs",
+              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\NhanVienController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NhanVienController.cs",
+              "ToolTip": "E:\\learning\\BE\\TAILIEU\\QuanLyThuVienLHU.API\\Controllers\\NhanVienController.cs",
+              "RelativeToolTip": "Controllers\\NhanVienController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:24:18.56Z",
+              "WhenOpened": "2024-05-08T16:35:11.445Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TaiKhoanRepository.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\ServicesRepositories\\TaiKhoanRepository.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\ServicesRepositories\\TaiKhoanRepository.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\ServicesRepositories\\TaiKhoanRepository.cs",
-              "RelativeToolTip": "..\\Infrastructure\\ServicesRepositories\\TaiKhoanRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:03:36.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SachRepository.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\ServicesRepositories\\SachRepository.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\ServicesRepositories\\SachRepository.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\ServicesRepositories\\SachRepository.cs",
-              "RelativeToolTip": "..\\Infrastructure\\ServicesRepositories\\SachRepository.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAowAgAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:03:30.197Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "RelativeToolTip": "..\\Infrastructure\\Repositories\\Interfaces\\IUnitOfWork.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:03:28.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IRepositoryBaseAsync.cs",
-              "DocumentMoniker": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\Repositories\\Interfaces\\IRepositoryBaseAsync.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\Repositories\\Interfaces\\IRepositoryBaseAsync.cs",
-              "ToolTip": "E:\\learning\\BE\\TAILIEU\\Infrastructure\\Repositories\\Interfaces\\IRepositoryBaseAsync.cs",
-              "RelativeToolTip": "..\\Infrastructure\\Repositories\\Interfaces\\IRepositoryBaseAsync.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-30T13:03:24.578Z"
             }
           ]
         }

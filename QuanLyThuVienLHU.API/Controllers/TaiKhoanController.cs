@@ -1,8 +1,8 @@
 using AutoMapper;
-using Infrastructure.DTOs;
+using infrastructure.repositories;
 using Infrastructure.Entities;
-using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using QuanLyThuVienLHU.API.DTOs.TaiKhoanDto;
 using QuanLyThuVienLHU.API.Helpers;
 using System.ComponentModel.DataAnnotations;
 
@@ -14,7 +14,7 @@ namespace QuanLyThuVienLHU.API.Controllers
     {
         private readonly ITaiKhoanRepository _repository;
         private readonly IMapper _mapper;
-        public TaiKhoanControllerController(ITaiKhoanRepository repository, IMapper mapper)
+        public TaiKhoanController(ITaiKhoanRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
@@ -23,17 +23,17 @@ namespace QuanLyThuVienLHU.API.Controllers
         #region CRUD
 
         [HttpGet]
-        public async Task<IActionResult> GetTaiKhoan()
+        public async Task<IActionResult> GetTaiKhoans()
         {
             var taiKhoans = await _repository.GetAllTaiKhoans();
-            var result = _mapper.Map<IEnumerable<GetNhanVienDto>>(taiKhoans);
+            var result = _mapper.Map<IEnumerable<GetTaiKhoanDto>>(taiKhoans);
             return Ok(result);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetTaiKhoan([Required] string id)
         {
-            var taiKhoan = await _repository.GetTaiKhoanId(id);
+            var taiKhoan = await _repository.GetTaiKhoanById(id);
             if (taiKhoan == null)
                 return new ObjectResult(new Response { Code = 400, Message = "Mã tài khoản không tôn tại" }) { StatusCode = 400 };
 
@@ -42,7 +42,8 @@ namespace QuanLyThuVienLHU.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateTaiKhoan([FromBody] CreateNhanVienDto taiKhoanDto)
+        [Route("CreateTaiKhoan")]
+        public async Task<IActionResult> CreateTaiKhoan([FromBody] CreateTaiKhoanDto taiKhoanDto)
         {
             var taiKhoanEntity = await _repository.GetTaiKhoanById(taiKhoanDto.MaTaiKhoan);
             if (taiKhoanEntity != null) return BadRequest($"Tài khoản {taiKhoanDto.MaTaiKhoan} đã tồn tại");
@@ -56,7 +57,8 @@ namespace QuanLyThuVienLHU.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateProduct([Required] string id, [FromBody] UpdateTaiKhoanDto taiKhoanDto)
+        [Route("UpdateTaiKhoan")]
+        public async Task<IActionResult> UpdateTaiKhoan([Required] string id, [FromBody] UpdateTaiKhoanDto taiKhoanDto)
         {
             var taiKhoan = await _repository.GetTaiKhoanById(id);
             if (taiKhoan == null)
@@ -68,19 +70,6 @@ namespace QuanLyThuVienLHU.API.Controllers
 
             //var result = _mapper.Map<UpdateNhanVienDto>(nhanVien);
             return Ok(taiKhoanDto);
-        }
-
-        [HttpDelete]
-        public async Task<IActionResult> DeleteProduct([Required] string id)
-        {
-            var product = await _repository.GetTaiKhoanById(id);
-            if (product == null)
-                return new ObjectResult(new Response { Code = 400, Message = $"Không tìm thấy Tài Khoản có Id {id}" });
-
-            await _repository.DeleteTaiKhoan(id);
-            await _repository.SaveChangesAsync();
-
-            return NoContent();
         }
         #endregion
     }

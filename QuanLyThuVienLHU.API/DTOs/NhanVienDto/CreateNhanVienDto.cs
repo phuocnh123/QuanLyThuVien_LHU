@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.DTOs
+﻿namespace QuanLyThuVienLHU.API.DTOs.NhanVienDto
 {
     public class CreateNhanVienDto : GetNhanVienDto
     {

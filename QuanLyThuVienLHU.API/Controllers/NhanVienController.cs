@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Infrastructure.DTOs;
+using QuanLyThuVienLHU.API.DTOs.NhanVienDto;
 using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -42,6 +42,7 @@ namespace QuanLyThuVienLHU.API.Controllers
         }
 
         [HttpPost]
+        [Route("CreateNhanVien")]
         public async Task<IActionResult> CreateNhanVien([FromBody] CreateNhanVienDto nhanVienDto)
         {
             var nhanVienEntity = await _repository.GetNhanVienById(nhanVienDto.MaNhanVien);
@@ -56,14 +57,15 @@ namespace QuanLyThuVienLHU.API.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateProduct([Required] string id, [FromBody] UpdateNhanVienDto nhanVienDto)
+        [Route("UpdateNhanVien")]
+        public async Task<IActionResult> UpdateNhanVien([Required] string id, [FromBody] UpdateNhanVienDto nhanVienDto)
         {
             var nhanVien = await _repository.GetNhanVienById(id);
             if (nhanVien == null)
                 return new ObjectResult(new Response { Code = 400, Message = "Mã nhân viên không tôn tại" }) { StatusCode = 400 };
 
             var updateNhanVien = _mapper.Map(nhanVienDto, nhanVien);
-            await _repository.UpdateNhanVien(nhanVien);
+            await _repository.UpdateNhanVien(updateNhanVien);
             await _repository.SaveChangesAsync();
 
             //var result = _mapper.Map<UpdateNhanVienDto>(nhanVien);
@@ -71,7 +73,8 @@ namespace QuanLyThuVienLHU.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteProduct([Required] string id)
+        [Route("DeleteNhanVien")]
+        public async Task<IActionResult> DeleteNhanVien([Required] string id)
         {
             var product = await _repository.GetNhanVienById(id);
             if (product == null)
