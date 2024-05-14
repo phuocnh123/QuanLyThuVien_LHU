@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using Infrastructure.ServicesRepositories;
 using QuanLyThuVienLHU.API.DTOs.ChiTietPhieuMuonDto;
 using Infrastructure.Entities;
+using QuanLyThuVienLHU.API.DTOs.NhanVienDto;
 
 namespace QuanLyThuVienLHU.API.Controllers
 {
@@ -22,8 +23,16 @@ namespace QuanLyThuVienLHU.API.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        [Route("GetMaSachByMaPhieuMuon")]
+        public List<string> GetMaSachByMaPhieuMuon(string maPhieuMuon)
+        { 
+            List<string> maSachs = _context.ChiTietPhieuMuons.Where(o => o.MaPhieuMuon == maPhieuMuon).Select(o => o.MaSach).ToList();
+            return maSachs;
+        }
+
         [HttpPut]
-        [Route("UpdateChiTietPhieuMuon")]
+        [Route("TraSach")]
         public async Task<IActionResult> UpdateChiTietPhieuMuon([Required] string maPhieuMuon, [Required] string maSach, [FromBody] UpdateChiTietPhieuMuonDto phieuMuonDto)
         {
             var phieuMuon = await _chiTietPhieuMuonRepository.GetChiTietPhieuMuonById(maPhieuMuon, maSach);
@@ -37,12 +46,5 @@ namespace QuanLyThuVienLHU.API.Controllers
             return Ok(phieuMuonDto);
         }
 
-        [HttpGet]
-        [Route("GetMaSachByMaPhieuMuon")]
-        public List<string> GetMaSachByMaPhieuMuon(string maPhieuMuon)
-        { 
-            List<string> maSachs = _context.ChiTietPhieuMuons.Where(o => o.MaPhieuMuon == maPhieuMuon).Select(o => o.MaSach).ToList();
-            return maSachs;
-        }
     }
 }

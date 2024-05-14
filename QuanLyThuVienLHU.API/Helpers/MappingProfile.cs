@@ -3,6 +3,7 @@ using QuanLyThuVienLHU.API.DTOs.NhanVienDto;
 using Infrastructure.Entities;
 using QuanLyThuVienLHU.API.DTOs.ChiTietPhieuMuonDto;
 using QuanLyThuVienLHU.API.DTOs.TaiKhoanDto;
+using QuanLyThuVienLHU.API.DTOs.PhieuMuonDto;
 
 namespace QuanLyThuVienLHU.API.Helpers
 {
@@ -21,6 +22,9 @@ namespace QuanLyThuVienLHU.API.Helpers
             CreateMap<UpdateTaiKhoanDto, GetTaiKhoanDto>();
             CreateMap<CreateTaiKhoanDto, TaiKhoan>();
             CreateMap<CreateTaiKhoanDto, GetTaiKhoanDto>();
+
+            CreateMap<CreatePhieuMuonDto, PhieuMuon>();
+            CreateMap<PhieuMuon, GetPhieuMuonInfosDto>();
 
             CreateMap<UpdateChiTietPhieuMuonDto, ChiTietPhieuMuon>();
             //CreateMap<ThongTinTraSachDto, PhieuMuon>();

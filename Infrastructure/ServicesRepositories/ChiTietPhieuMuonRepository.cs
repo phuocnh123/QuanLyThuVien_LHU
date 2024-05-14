@@ -36,8 +36,7 @@ namespace Infrastructure.ServicesRepositories
             if (chiTietPhieuMuon != null)
             {
                 this.Update(chiTietPhieuMuon);
-                var result = await this.SaveChangesAsync();
-                if (result > 0) return true;
+                return true;
             }
             return false;
         }
@@ -47,8 +46,7 @@ namespace Infrastructure.ServicesRepositories
             if (ctPhieuMuon.MaPhieuMuon != null && ctPhieuMuon.MaSach != null)
             {
                 await this.Add(ctPhieuMuon);
-                var result = await this.SaveChangesAsync();
-                if (result > 0) return true;
+                return true;
             }
             return false;
         }

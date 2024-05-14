@@ -1,4 +1,5 @@
-﻿using Infrastructure.Entities;
+﻿using AutoMapper;
+using Infrastructure.Entities;
 using Infrastructure.ServicesRepositories;
 using Microsoft.AspNetCore.Mvc;
 using QuanLyThuVienLHU.API.DTOs.ChiTietPhieuMuonDto;
@@ -17,44 +18,43 @@ namespace QuanLyThuVienLHU.API.Controllers
     {
         private readonly IPhieuMuonRepository _repository;
         private readonly ChiTietPhieuMuonService _chiTietPhieuMuonService;
-        public PhieuMuonController(IPhieuMuonRepository repository, ChiTietPhieuMuonService chiTietPhieuMuonService)
+        private readonly IMapper _mapper;
+        public PhieuMuonController(IPhieuMuonRepository repository, ChiTietPhieuMuonService chiTietPhieuMuonService, IMapper mapper)
         {
             _repository = repository;
             _chiTietPhieuMuonService = chiTietPhieuMuonService;
+            _mapper = mapper;
         }
 
         [HttpGet()]
-        [Route("GetMaPhieuMuonsInfoByMaTaiKhoan")]
-        public async Task<IActionResult> GetMaPhieuMuonsInfoByMaTaiKhoan([Required] string maTaiKhoan)
+        [Route("GetPhieuMuonsInfoByMaTaiKhoan")]
+        public async Task<IActionResult> GetPhieuMuonsInfoByMaTaiKhoan([Required] string maTaiKhoan)
         {
             if (string.IsNullOrEmpty(maTaiKhoan))
-                return new ObjectResult(new Response { Code = 400, Message = $"Mã tài khoản không được trống" }) { StatusCode = 400 };
+                return new ObjectResult(new Response {Code = 400, Message = $"Mã tài khoản không được trống"}) { StatusCode = 400 };
 
             var phieuMuons = await _repository.GetPhieuMuonByMaTK(maTaiKhoan);
 
-            if (phieuMuons == null || phieuMuons.Count == 0)
-                return NotFound();
+            List<GetPhieuMuonInfosDto> getPhieuMuonInfos = new List<GetPhieuMuonInfosDto>();
+            foreach(var pm in phieuMuons)
+            {
+                GetPhieuMuonInfosDto pmInfos  = _mapper.Map<GetPhieuMuonInfosDto>(pm);
+                getPhieuMuonInfos.Add(pmInfos);
+            }
 
-            return Ok(phieuMuons);
+            if (getPhieuMuonInfos == null || phieuMuons.Count == 0) return NotFound();
+
+            return Ok(getPhieuMuonInfos);
         }
 
         [HttpPost]
-        [Route("CreatePhieuMuon")]
+        [Route("MuonSach")]
         public async Task<IActionResult> CreatePhieuMuon([FromBody] CreatePhieuMuonDto phieuMuonDto)
         {
             var phieuMuonEntity = await _repository.GetPhieuMuonById(phieuMuonDto.MaPhieuMuon);
             if (phieuMuonEntity != null) return BadRequest($"Phiếu mượn {phieuMuonDto.MaPhieuMuon} đã tồn tại");
 
-            var newPhieuMuon = new PhieuMuon
-            {
-                MaPhieuMuon = phieuMuonDto.MaPhieuMuon,
-                NgayMuon = DateTime.Now,
-                SoNgayMuon = phieuMuonDto.SoNgayMuon,
-                MaTaiKhoan = phieuMuonDto.MaTaiKhoan,
-                MaNhanVien = phieuMuonDto.MaNhanVien,
-                GhiChu = phieuMuonDto?.GhiChu,
-                TrangThai = "Chưa trả",
-            };
+            PhieuMuon newPhieuMuon = _mapper.Map<PhieuMuon>(phieuMuonDto);
 
             await _repository.CreateNewPhieuMuon(newPhieuMuon);
 
@@ -68,17 +68,17 @@ namespace QuanLyThuVienLHU.API.Controllers
                 await _chiTietPhieuMuonService.CreateChiTietPhieuMuon(ctPhieuMuonDto);
             }
 
-            await _repository.SaveChangesAsync();
+            //await _repository.SaveChangesAsync();
 
-            JsonSerializerOptions options = new()
-            {
-                ReferenceHandler = ReferenceHandler.IgnoreCycles,
-                WriteIndented = true
-            };
+            //JsonSerializerOptions options = new()
+            //{
+            //    ReferenceHandler = ReferenceHandler.IgnoreCycles,
+            //    WriteIndented = true
+            //};
 
-            string newPhieuMuonJson = JsonSerializer.Serialize(newPhieuMuon, options);
+            //string newPhieuMuonJson = JsonSerializer.Serialize(newPhieuMuon, options);
 
-            return Ok(newPhieuMuonJson);
+            return Ok(phieuMuonDto);
         }
 
     }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using QuanLyThuVienLHU.API.DTOs.TaiKhoanDto;
 using QuanLyThuVienLHU.API.Helpers;
 using System.ComponentModel.DataAnnotations;
+using QuanLyThuVienLHU.API.Helpers;
 
 namespace QuanLyThuVienLHU.API.Controllers
 {
@@ -48,10 +49,15 @@ namespace QuanLyThuVienLHU.API.Controllers
             var taiKhoanEntity = await _repository.GetTaiKhoanById(taiKhoanDto.MaTaiKhoan);
             if (taiKhoanEntity != null) return BadRequest($"Tài khoản {taiKhoanDto.MaTaiKhoan} đã tồn tại");
 
+            if(!RegexUtilities.IsValidEmail(taiKhoanDto.Email))
+            {
+                return new ObjectResult(new Response { Code = 500, Message = "Email không hợp lệ" }) { StatusCode = 500 };
+            }
+
             var newTaiKhoan = _mapper.Map<TaiKhoan>(taiKhoanDto);
             await _repository.CreateNewTaiKhoan(newTaiKhoan);
+
             await _repository.SaveChangesAsync();
-            //var result = _mapper.Map<CreateNhanVienDto>(nhanVienDto);
 
             return Ok(taiKhoanDto);
         }
@@ -62,13 +68,22 @@ namespace QuanLyThuVienLHU.API.Controllers
         {
             var taiKhoan = await _repository.GetTaiKhoanById(id);
             if (taiKhoan == null)
-                return new ObjectResult(new Response { Code = 400, Message = "Mã Tài Kho không tôn tại" }) { StatusCode = 400 };
+                return new ObjectResult(new Response { Code = 400, Message = "Mã tài khoản không tôn tại" }) { StatusCode = 400 };
+
+            if (!RegexUtilities.IsValidEmail(taiKhoanDto.Email) )
+            {
+                return new ObjectResult(new Response { Code = 500, Message = "Email không hợp lệ" }) { StatusCode = 500 };
+            }
+       
+            if (!int.TryParse(taiKhoanDto.Sdt, out int SDT) || (taiKhoanDto.Sdt.Length != 10 && taiKhoanDto.Sdt.Length != 11))
+            {
+                return new ObjectResult(new Response { Code = 500, Message = "Số điện thoại không hợp lệ" }) { StatusCode = 500 };
+            }
 
             var updateTaiKhoan = _mapper.Map(taiKhoanDto, taiKhoan);
             await _repository.UpdateTaiKhoan(taiKhoan);
             await _repository.SaveChangesAsync();
 
-            //var result = _mapper.Map<UpdateNhanVienDto>(nhanVien);
             return Ok(taiKhoanDto);
         }
         #endregion

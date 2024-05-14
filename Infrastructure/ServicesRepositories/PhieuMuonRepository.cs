@@ -1,11 +1,6 @@
 ﻿using Infrastructure.Entities;
 using Infrastructure.Repositories.Interfaces;
 using Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.ServicesRepositories
@@ -37,7 +32,6 @@ namespace Infrastructure.ServicesRepositories
 
         public async Task<List<PhieuMuon>> GetPhieuMuonByMaTK(string maTaiKhoan)
         {
-
             if (maTaiKhoan != null)
             {
                 List<PhieuMuon> phieuMuon = await _context.PhieuMuons.Where(o => o.MaTaiKhoan ==  maTaiKhoan).ToListAsync(); ;

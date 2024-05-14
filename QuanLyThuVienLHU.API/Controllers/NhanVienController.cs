@@ -48,6 +48,11 @@ namespace QuanLyThuVienLHU.API.Controllers
             var nhanVienEntity = await _repository.GetNhanVienById(nhanVienDto.MaNhanVien);
             if (nhanVienEntity != null) return BadRequest($"Nhân viên {nhanVienDto.MaNhanVien} đã tồn tại");
 
+            if (!int.TryParse(nhanVienDto.Sdt, out int SDT) || (nhanVienDto.Sdt.Length != 10 && nhanVienDto.Sdt.Length != 11))
+            {
+                return new ObjectResult(new Response { Code = 500, Message = "Số điện thoại không hợp lệ" }) { StatusCode = 500 };
+            }
+
             var newNhanVien = _mapper.Map<NhanVien>(nhanVienDto);
             await _repository.CreateNewNhanVien(newNhanVien);
             await _repository.SaveChangesAsync();
@@ -63,6 +68,16 @@ namespace QuanLyThuVienLHU.API.Controllers
             var nhanVien = await _repository.GetNhanVienById(id);
             if (nhanVien == null)
                 return new ObjectResult(new Response { Code = 400, Message = "Mã nhân viên không tôn tại" }) { StatusCode = 400 };
+
+            if (!int.TryParse(nhanVienDto.Sdt, out int SDT) || (nhanVienDto.Sdt.Length != 10 && nhanVienDto.Sdt.Length != 11))
+            {
+                return new ObjectResult(new Response { Code = 500, Message = "Số điện thoại không hợp lệ" }) { StatusCode = 500 };
+            }
+
+            if (!RegexUtilities.IsValidEmail(nhanVienDto.Email))
+            {
+                return new ObjectResult(new Response { Code = 500, Message = "Email không hợp lệ" }) { StatusCode = 500 };
+            }
 
             var updateNhanVien = _mapper.Map(nhanVienDto, nhanVien);
             await _repository.UpdateNhanVien(updateNhanVien);
